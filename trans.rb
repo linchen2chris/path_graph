@@ -100,7 +100,7 @@ def get_shorest_path(start,dest,is_first,path_graph,path)
 	
 	path_graph[start.to_sym].each do |key,value|
 		if(path.include?key.to_s) #如果已经被包含了，说明是回路，直接跳到下一次循环。
-		  next;
+			next;
 		else #不然的话，递归进去找最短路径
 		    length_of_transit_path = value + get_shorest_path(key.to_s,dest,false,path_graph,path);
 		    if(length_of_transit_path < length_of_shorest_path)
