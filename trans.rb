@@ -92,9 +92,9 @@ puts(get_num_of_trips_given_stops("A","C",4,path_graph))
 #解决问题8和9,求两点之间的最短路径,如果头尾是同一点则返回的是绕一圈之后的最短路径
 def get_shorest_path(start,dest,is_first,path_graph,path) 
 	length_of_shorest_path = 0;
-    if(start == dest && is_first == false) #如果递归到dest了，说明走通了一条路径，开始向上迭代，
-        return 0;
-    end
+	if(start == dest && is_first == false) #如果递归到dest了，说明走通了一条路径，开始向上迭代，
+		return 0;
+	end
 	length_of_shorest_path = Float::INFINITY; #先初始化路径长度为无穷大
 	path.push(start) unless (start == dest && is_first==true) #记录下这条路径，便于之后检测回路，例外的是如果一开始起点和终点相等，起点不记录
 	
